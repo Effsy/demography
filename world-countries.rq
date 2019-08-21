@@ -1,5 +1,5 @@
-# Cities with population over 10000
-SELECT DISTINCT ?city ?cityLabel ?countryLabel ?population WHERE {
+#Countries with population over 10000
+SELECT DISTINCT ?countryLabel WHERE {
   {?city (wdt:P31/wdt:P279*) wd:Q515 . }
   UNION
   {?city (wdt:P31/wdt:P279*) wd:Q3957 .}
