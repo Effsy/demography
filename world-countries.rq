@@ -6,7 +6,7 @@ SELECT DISTINCT ?countryLabel WHERE {
   ?city wdt:P17 ?country;
 
   wdt:P1082 ?population.
-  FILTER(?population > 10000 )
+  FILTER(?population > 50000 )
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
