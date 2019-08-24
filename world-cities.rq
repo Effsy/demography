@@ -1,12 +1,14 @@
-# Cities with population over 10000
-SELECT DISTINCT ?city ?cityLabel ?countryLabel ?population WHERE {
+# Cities with population over 50000
+SELECT DISTINCT ?cityLabel ?countryLabel ?countryISO ?population  WHERE {
   {?city (wdt:P31/wdt:P279*) wd:Q515 . }
   UNION
   {?city (wdt:P31/wdt:P279*) wd:Q3957 .}
   ?city wdt:P17 ?country;
-
-  wdt:P1082 ?population.
+  
+  wdt:P1082 ?population .
   FILTER(?population > 50000 )
+  
+  ?country wdt:P297 ?countryISO;
 
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
